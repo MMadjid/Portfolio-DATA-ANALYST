@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil Data Analyst / Power BI – Portfolio</title>
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: #11172c;
+      --muted: #9fb0c8;
+      --text: #eaf1ff;
+      --accent: #2ea8ff; /* bleu */
+      --accent-2: #6bb38f; /* vert fumé */
+      --ring: rgba(46,168,255,.35);
+      --shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.03);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f9ff;
+        --card: #ffffff;
+        --muted: #526079;
+        --text: #0a1020;
+        --accent: #1266ff;
+        --accent-2: #4aa37e;
+        --ring: rgba(18,102,255,.18);
+        --shadow: 0 10px 25px rgba(16,37,78,.10), inset 0 1px 0 rgba(255,255,255,.7);
+      }
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji"; background: radial-gradient(1200px 600px at 80% -10%, rgba(46,168,255,.10), transparent 50%), radial-gradient(1000px 500px at -20% 120%, rgba(107,179,143,.12), transparent 50%), var(--bg); color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin-inline:auto;padding:28px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .logo{width:36px;height:36px;border-radius:10px;background: linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow: var(--shadow)}
+    .pill{border:1px solid rgba(255,255,255,.12);color:var(--text);padding:8px 12px;border-radius:999px;font-size:14px;display:inline-flex;gap:8px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);backdrop-filter:saturate(140%);}
+    .pill svg{opacity:.9}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;margin-top:28px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:10px 0 14px}
+    .lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:62ch}
+    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{position:relative;display:inline-flex;align-items:center;gap:10px;border-radius:14px;padding:12px 16px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:.2s}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#7cc2ff);color:white;box-shadow:0 10px 20px rgba(46,168,255,.25)}
+    .btn-outline{border-color:rgba(255,255,255,.15);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}
+    .btn:hover{transform:translateY(-1px)}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.02));border:1px solid rgba(255,255,255,.12);border-radius:18px;box-shadow:var(--shadow)}
+
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+
+    .section{margin-top:38px}
+    .section h2{font-size:clamp(22px,2.6vw,28px);margin:0 0 14px}
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);font-size:14px;color:var(--text)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+
+    .skill-col{padding:18px}
+    .skill-col h3{margin:0 0 8px;font-size:18px}
+    .muted{color:var(--muted)}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);margin:12px 0}
+
+    .project{padding:16px;display:flex;flex-direction:column;gap:12px}
+    .project h3{margin:0;font-size:18px}
+    .meta{display:flex;gap:8px;flex-wrap:wrap}
+    .meta .tag{font-size:12px;padding:6px 8px}
+
+    .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px}
+    .kpi .k{padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);text-align:center}
+    .k .v{font-size:22px;font-weight:700}
+    .k .l{font-size:12px;color:var(--muted)}
+    @media (max-width:900px){.kpi{grid-template-columns:repeat(2,1fr)}}
+
+    .footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 8px;color:var(--muted);font-size:14px}
+
+    .ring{box-shadow:0 0 0 6px var(--ring)}
+    .accented{border-color:rgba(46,168,255,.45)!important}
+
+    .list{display:grid;gap:8px;margin:8px 0 0;padding-left:18px}
+    .list li{margin:0 0 2px}
+  </style>
+</head>
+<body>
+  <header class="container nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <span>MEHAL Madjid // Data Analyst · Power BI</span>
+    </div>
+    <a href="#contact" class="pill" aria-label="Aller au contact">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 0 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Me contacter
+    </a>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero card">
+      <div style="padding:22px 22px 10px 22px;">
+        <h1>Profil Data Analyst / Power BI</h1>
+        <p class="lead">J’explore, nettoie et modélise les données pour aider à la décision. Je conçois des analyses et des tableaux de bord interactifs (Power BI · DAX · Python · SQL) qui traduisent les besoins métiers en résultats clairs et actionnables.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#projets">Voir les projets</a>
+          <a class="btn btn-outline" href="#competences">Toutes mes compétences</a>
+        </div>
+        <div class="kpi">
+          <div class="k"><div class="v">10+ </div><div class="l">dashboards interactifs</div></div>
+          <div class="k"><div class="v">5+ </div><div class="l">projets data complets</div></div>
+          <div class="k"><div class="v">DAX</div><div class="l">mesures & KPI</div></div>
+          <div class="k"><div class="v">ETL</div><div class="l">Power Query · Python</div></div>
+        </div>
+      </div>
+      <aside style="padding:22px;display:grid;gap:12px">
+        <div class="card" style="padding:16px">
+          <div class="tags" aria-label="Stack clés">
+            <span class="tag accented">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Python</span>
+            <span class="tag">pandas</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Git/GitHub</span>
+          </div>
+          <div class="divider"></div>
+          <p class="muted" style="margin:0">Focus : visualisation, élaboration de rapports, traitement des données (ETL), analyses statistiques et valorisation des données.</p>
+        </div>
+        <div class="card" style="padding:16px">
+          <strong>Objectif</strong>
+          <ul class="list">
+            <li>Concevoir des dashboards clairs et actionnables</li>
+            <li>Industrialiser la préparation des données</li>
+            <li>Communiquer des analyses à forte valeur pour l'entreprise</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section id="competences" class="section">
+      <h2>Compétences</h2>
+      <div class="grid grid-3">
+        <div class="card skill-col">
+          <h3>Langages & Outils</h3>
+          <p class="muted">Python (pandas, numpy, matplotlib), SQL, Power BI, DAX, Excel avancé, Git/GitHub.</p>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Excel</span>
+          </div>
+        </div>
+        <div class="card skill-col">
+          <h3>Data Ops & ETL</h3>
+          <p class="muted">Collecte, nettoyage, fusion, transformation. Pipelines reproductibles avec Power Query & scripts Python.</p>
+          <div class="tags">
+            <span class="tag">Power Query</span>
+            <span class="tag">ETL</span>
+            <span class="tag">Automatisation</span>
+          </div>
+        </div>
+        <div class="card skill-col">
+          <h3>Analyse & Statistiques</h3>
+          <p class="muted">EDA, corrélations, régressions, tests d’hypothèses, détection d’anomalies. Interprétation et restitution.</p>
+          <div class="tags">
+            <span class="tag">EDA</span>
+            <span class="tag">Régression</span>
+            <span class="tag">A/B · Tests</span>
+          </div>
+        </div> 
+        <div class="card skill-col">
+          <h3>Visualisation & Storytelling</h3>
+          <p class="muted">Dashboards interactifs, choix de graphiques pertinents, mise en contexte des analyses.</p>
+          <div class="tags">
+            <span class="tag">KPI</span>
+            <span class="tag">Cartes</span>
+            <span class="tag">Interactions</span>
+          </div>
+        </div>
+        <div class="card skill-col">
+          <h3>Gestion de projet</h3>
+          <p class="muted">Cadrage, suivi, documentation, versions (Git). Travail en autonomie et collaboration.</p>
+          <div class="tags">
+            <span class="tag">Git Flow</span>
+            <span class="tag">Docs</span>
+            <span class="tag">Backlog</span>
+          </div>
+        </div>
+        <div class="card skill-col">
+          <h3>Business & Communication</h3>
+          <p class="muted">Traduction des besoins métiers en indicateurs. Présentation claire à des publics non techniques.</p>
+          <div class="tags">
+            <span class="tag">Ateliers</span>
+            <span class="tag">Restitution</span>
+            <span class="tag">Data‑driven</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="section">
+      <h2>Projets sélectionnés</h2>
+      <div class="grid grid-3">
+        <article class="card project">
+          <h3>Éducation & contexte social</h3>
+          <p class="muted">Corrélation entre l’Indice de Position Sociale (IPS) et la réussite scolaire. EDA Python, dashboard Power BI, mise en lumière des disparités régionales et analyse de corrélation de Pearson pour valider les relations clés.</p>
+          <div class="meta">
+            <span class="tag">Python</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+          </div>
+          <div class="cta">
+            <a class="btn btn-outline" href="PDF/Lien IPS et obtention BAC.pdf" target="_blank" rel="noopener">Voir le dashboard</a>
+            <a class="btn btn-outline" href="https://github.com/MMadjid/DATA-ANALYST-Lien-entre-IPS-et-r-ussite-BAC.git" target="_blank" rel="noopener">Code source</a>
+          </div>
+        </article>
+        <article class="card project">
+          <h3>Analyse des ventes de vin en ligne</h3>
+          <p class="muted">Objectif&nbsp;: calculer le chiffre d’affaires en ligne. Intégration et consolidation de 3 fichiers sources en un dataset unique (nettoyage, normalisation, jointures) contenant les variables essentielles. Modélisation et mesures dans Power BI (DAX), visualisation via nuage de points.</p>
+          <div class="meta">
+            <span class="tag">Python</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Nuage de points</span>
+            <span class="tag">Pearson</span>
+          </div>
+          <div class="cta">
+            <a class="btn btn-outline" href="PDF\Compte rendu final pour COPIL.pdf" target="_blank" rel="noopener">Aperçu</a>
+            <a class="btn btn-outline" href="https://github.com/MMadjid/DATA-ANALYST-Vente-de-vin-en-ligne.git" target="_blank" rel="noopener">Code source</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section card" style="padding:18px">
+      <h2>Me contacter</h2>
+      <p class="muted">Discutons de vos besoins data (analyse, reporting, automatisation, visualisation).</p>
+      <div class="cta">
+        <!-- ⚠️ Remplace ces liens par les tiens -->
+        <a class="btn btn-primary" href="mailto:mehal.madjidpro@gmail.com">📧 Envoyer un email</a>
+        <a class="btn btn-outline" href="https://linkedin.com/in/ton-handle" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-outline" href="https://github.com/MMadjid" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <footer class="container footer">
+      <span>© MEHAL Madjid — Data Analyst / Power BI</span>
+    </footer>
+  </main>
+
+  <script>
+    // Confort : focus visible sur tab + ancre douce
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Tab') document.body.classList.add('ring');
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      })
+    })
+  </script>
+</body>
+</html>
+
