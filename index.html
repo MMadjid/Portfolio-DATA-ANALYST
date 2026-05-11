@@ -10,8 +10,8 @@
       --card: #11172c;
       --muted: #9fb0c8;
       --text: #eaf1ff;
-      --accent: #2ea8ff; /* bleu */
-      --accent-2: #6bb38f; /* vert fumé */
+      --accent: #2ea8ff;
+      --accent-2: #6bb38f;
       --ring: rgba(46,168,255,.35);
       --shadow: 0 10px 25px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.03);
     }
@@ -82,6 +82,19 @@
 
     .list{display:grid;gap:8px;margin:8px 0 0;padding-left:18px}
     .list li{margin:0 0 2px}
+
+    .preview{
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);
+      overflow:hidden;
+      aspect-ratio: 16 / 10;
+    }
+    .preview iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
   </style>
 </head>
 <body>
@@ -97,7 +110,6 @@
   </header>
 
   <main class="container">
-    <!-- HERO -->
     <section class="hero card">
       <div style="padding:22px 22px 10px 22px;">
         <h1>Profil Data Analyst / Power BI</h1>
@@ -138,13 +150,12 @@
       </aside>
     </section>
 
-    <!-- COMPETENCES -->
     <section id="competences" class="section">
       <h2>Compétences</h2>
       <div class="grid grid-3">
         <div class="card skill-col">
           <h3>Langages & Outils</h3>
-          <p class="muted">Python (pandas, numpy, matplotlib), SQL, Power BI, DAX, Excel avancé, Git/GitHub.</p>
+          <p class="muted">HTML, CSS, Javascript, Python (pandas, numpy, matplotlib), SQL, Power BI, DAX, Excel avancé, Git/GitHub.</p>
           <div class="tags">
             <span class="tag">Power BI</span>
             <span class="tag">DAX</span>
@@ -170,7 +181,7 @@
             <span class="tag">Régression</span>
             <span class="tag">A/B · Tests</span>
           </div>
-        </div> 
+        </div>
         <div class="card skill-col">
           <h3>Visualisation & Storytelling</h3>
           <p class="muted">Dashboards interactifs, choix de graphiques pertinents, mise en contexte des analyses.</p>
@@ -195,15 +206,15 @@
           <div class="tags">
             <span class="tag">Ateliers</span>
             <span class="tag">Restitution</span>
-            <span class="tag">Data‑driven</span>
+            <span class="tag">Data-driven</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJETS -->
     <section id="projets" class="section">
       <h2>Projets sélectionnés</h2>
+
       <div class="grid grid-3">
         <article class="card project">
           <h3>Éducation & contexte social</h3>
@@ -218,6 +229,7 @@
             <a class="btn btn-outline" href="https://github.com/MMadjid/DATA-ANALYST-Lien-entre-IPS-et-r-ussite-BAC.git" target="_blank" rel="noopener">Code source</a>
           </div>
         </article>
+
         <article class="card project">
           <h3>Analyse des ventes de vin en ligne</h3>
           <p class="muted">Objectif&nbsp;: calculer le chiffre d’affaires en ligne. Intégration et consolidation de 3 fichiers sources en un dataset unique (nettoyage, normalisation, jointures) contenant les variables essentielles. Modélisation et mesures dans Power BI (DAX), visualisation via nuage de points.</p>
@@ -233,18 +245,90 @@
             <a class="btn btn-outline" href="https://github.com/MMadjid/DATA-ANALYST-Vente-de-vin-en-ligne.git" target="_blank" rel="noopener">Code source</a>
           </div>
         </article>
+
+        <!-- NOUVEAU PROJET : LIBRAIRIE -->
+        <article class="card project">
+          <h3>Analyse ventes & clients — Librairie</h3>
+          <p class="muted">Analyse complète des ventes et des comportements clients : chiffre d’affaires global et mensuel, produits et catégories les plus rentables, profils clients (âge, genre, fréquence), corrélations et segmentation par clustering. Livrable : rapport Power BI structuré en une page par question.</p>
+          <div class="meta">
+            <span class="tag">Python</span>
+            <span class="tag">pandas</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Clustering</span>
+          </div>
+          <div class="cta">
+            <!-- Remplace les liens ci-dessous par tes vrais fichiers/URLs -->
+            <a class="btn btn-outline" href="PDF/Analyse vente livre.pdf" target="_blank" rel="noopener">Aperçu</a>
+            <a class="btn btn-outline" href="https://github.com/MMadjid/DATA-ANALYST-Analyse-vente-boutique-de-livre.git" target="_blank" rel="noopener">Code source</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 style="margin-top:16px">Projets web</h2>
+      <div class="grid grid-2">
+
+        <article class="card project">
+          <h3>Création site — La Faculté des Enfants</h3>
+          <p class="muted">Conception et développement du site de A à Z : structure, pages, interactions et intégration. Projet réalisé en JavaScript, avec une approche centrée sur la clarté, l’accessibilité et l’expérience utilisateur.</p>
+          <div class="meta">
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Déploiement</span>
+          </div>
+
+          <div class="preview" aria-label="Aperçu du site">
+            <iframe
+              src="https://www.lafacultedesenfants.com/"
+              title="Aperçu — La Faculté des Enfants"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            ></iframe>
+          </div>
+
+          <div class="cta" style="margin-top:12px">
+            <a class="btn btn-primary" href="https://www.lafacultedesenfants.com/" target="_blank" rel="noopener">Ouvrir le site</a>
+          </div>
+          <p class="muted" style="margin:0;font-size:13px"></p>
+        </article>
+
+              <!-- PROJET EN COURS -->
+<article class="card project">
+  <h3>Projet en cours — Site news (Jeux vidéo · Anime · Manga · Films)</h3>
+  <p class="muted">
+    Développement d’un site de news en JavaScript avec une approche orientée data : collecte et structuration des contenus,
+    analyse des tendances (thèmes, fréquence, popularité) et mise en place d’indicateurs. Objectif à terme : ajouter des
+    fonctionnalités data science / IA (recommandations, classement, détection de sujets tendance).
+  </p>
+  <div class="meta">
+    <span class="tag">JavaScript</span>
+    <span class="tag">Data analyse</span>
+    <span class="tag">API</span>
+    <span class="tag">Dashboard</span>
+    <span class="tag">IA (en cours)</span>
+  </div>
+  <div class="cta">
+    <!-- Remplace # par ton lien GitHub / démo quand ce sera prêt -->
+    <!-- <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Suivre l’avancement</a>
+    <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Code source</a>-->
+  </div>
+  <p class="muted" style="margin:0;font-size:13px">
+    Statut : en cours de développement.
+  </p>
+</article>
+
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section card" style="padding:18px">
       <h2>Me contacter</h2>
       <p class="muted">Discutons de vos besoins data (analyse, reporting, automatisation, visualisation).</p>
       <div class="cta">
         <a class="btn btn-primary" href="mailto:mehal.madjidpro@gmail.com">📧 Envoyer un email</a>
         <a class="btn btn-outline" href="https://github.com/MMadjid" target="_blank" rel="noopener">GitHub</a>
-         <!--<a class="btn btn-outline" href="https://linkedin.com/in/ton-handle" target="_blank" rel="noopener">LinkedIn</a>-->
-
       </div>
     </section>
 
@@ -254,7 +338,6 @@
   </main>
 
   <script>
- 
     document.addEventListener('keydown', (e)=>{
       if(e.key === 'Tab') document.body.classList.add('ring');
     });
@@ -270,4 +353,3 @@
   </script>
 </body>
 </html>
-
